@@ -34,13 +34,12 @@ class CountryController extends Controller
         return view('country.list', compact('allCountries'));
     }
 
-    public function countryDetail($name)
+    public function countryDetail($countryId)
     {
         $country = [];
         try {
-            $res = $this->client->request('GET', 'https://restcountries.eu/rest/v2/name/' . $name);
+            $res = $this->client->request('GET', 'https://restcountries.eu/rest/v2/alpha/' . $countryId);
             $country = json_decode($res->getBody());
-            $country = isset($country[0]) ? $country[0] : null;
         } catch(GuzzleException $e) {
             Log::info('API error: ' . $e->getMessage());
         }

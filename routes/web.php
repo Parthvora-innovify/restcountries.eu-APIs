@@ -20,5 +20,5 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'CountryController@listAllCountries');
-Route::get('countries/{name}', 'CountryController@countryDetail')->name('country.show');
+Route::get('countries/{countryId}', 'CountryController@countryDetail')->name('country.show');
 Route::get('currency/{currency}', 'CountryController@currencyCountries')->name('country.currency');

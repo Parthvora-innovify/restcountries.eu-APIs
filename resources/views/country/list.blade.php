@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Country List</div>
                 <div class="panel-body">
@@ -33,7 +33,7 @@
                     <tbody>
                         @foreach($allCountries as $country)
                         <tr>
-                            <td><a href="{{ route('country.show', [$country->name]) }}">{{ $country->name }}</a></td>
+                            <td><a href="{{ route('country.show', [$country->alpha2Code]) }}">{{ $country->name }}</a></td>
                             <td>{{ $country->capital }}</td>
                             <td>{{ $country->alpha2Code }}</td>
                             <td>{{ implode(', ', $country->callingCodes) }}</td>
