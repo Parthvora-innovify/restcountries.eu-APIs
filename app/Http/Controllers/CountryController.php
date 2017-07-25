@@ -23,7 +23,7 @@ class CountryController extends Controller
     const API_URL = 'https://restcountries.eu/rest/v2/';
     
     /**
-     * Intianiatate Guzzle
+     * Instantiate Guzzle
      * Constructor
      */
     function __construct() 
@@ -64,7 +64,6 @@ class CountryController extends Controller
         } catch(GuzzleException $e) {
             Log::info('API error: ' . $e->getMessage());
         }
-        
         
         return view('country.detail', compact('country'));
     }
